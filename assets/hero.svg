@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320" role="img" aria-label="Animated banner: Pinandhita, Technology and IoT Enthusiast" xmlns:c2pa="http://c2pa.org/manifest">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </linearGradient>
+    <clipPath id="typeClip">
+      <rect x="380" y="80" width="0" height="60">
+        <animate attributeName="width" values="0;400;400;0" keyTimes="0;0.3;0.9;1" dur="8s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+  </defs>
+
+  <rect width="900" height="320" rx="20" fill="url(#bg)"/>
+
+  <!-- twinkling stars -->
+  <g fill="#e0e7ff">
+    <circle cx="40" cy="40" r="2"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.2s" repeatCount="indefinite"/></circle>
+    <circle cx="120" cy="290" r="1.5"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" begin="0.5s" repeatCount="indefinite"/></circle>
+    <circle cx="330" cy="30" r="2"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.6s" begin="1s" repeatCount="indefinite"/></circle>
+    <circle cx="560" cy="300" r="1.5"><animate attributeName="opacity" values="0.2;1;0.2" dur="2s" begin="0.3s" repeatCount="indefinite"/></circle>
+    <circle cx="700" cy="40" r="2"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.4s" begin="0.8s" repeatCount="indefinite"/></circle>
+    <circle cx="860" cy="70" r="1.5"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.4s" begin="1.4s" repeatCount="indefinite"/></circle>
+    <circle cx="870" cy="280" r="2"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.8s" begin="0.2s" repeatCount="indefinite"/></circle>
+    <circle cx="25" cy="170" r="1.5"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.2s" begin="1.1s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- orbit with IoT nodes -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 200 160" to="360 200 160" dur="14s" repeatCount="indefinite"/>
+    <circle cx="200" cy="160" r="125" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4 8" opacity="0.7"/>
+    <g>
+      <circle cx="325" cy="160" r="11" fill="#22d3ee"/>
+      <circle cx="325" cy="160" r="4" fill="#0f172a"/>
+    </g>
+    <g>
+      <circle cx="137.5" cy="268.2" r="11" fill="#f472b6"/>
+      <circle cx="137.5" cy="268.2" r="4" fill="#0f172a"/>
+    </g>
+    <g>
+      <circle cx="137.5" cy="51.8" r="11" fill="#facc15"/>
+      <circle cx="137.5" cy="51.8" r="4" fill="#0f172a"/>
+    </g>
+  </g>
+
+  <!-- robot -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 -10;0 0" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" dur="3s" repeatCount="indefinite"/>
+
+    <!-- signal pulses -->
+    <circle cx="200" cy="60" r="6" fill="none" stroke="#fb7185" stroke-width="2">
+      <animate attributeName="r" values="6;40" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="60" r="6" fill="none" stroke="#fb7185" stroke-width="2">
+      <animate attributeName="r" values="6;40" dur="2s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- antenna -->
+    <line x1="200" y1="90" x2="200" y2="66" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="200" cy="60" r="7" fill="#f43f5e">
+      <animate attributeName="r" values="6;9;6" dur="1s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- body -->
+    <rect x="155" y="186" width="90" height="60" rx="18" fill="#818cf8"/>
+    <circle cx="200" cy="216" r="9" fill="#fde047">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- left arm -->
+    <rect x="125" y="196" width="34" height="12" rx="6" fill="#a5b4fc"/>
+
+    <!-- waving right arm -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="-25 245 200;25 245 200;-25 245 200" dur="0.9s" repeatCount="indefinite"/>
+      <rect x="241" y="194" width="38" height="12" rx="6" fill="#a5b4fc"/>
+      <circle cx="281" cy="200" r="9" fill="#c7d2fe"/>
+    </g>
+
+    <!-- head -->
+    <rect x="140" y="90" width="120" height="90" rx="24" fill="#38bdf8"/>
+    <rect x="154" y="104" width="92" height="60" rx="16" fill="#0f172a"/>
+
+    <!-- eyes (blink) -->
+    <ellipse cx="180" cy="132" rx="8" ry="8" fill="#67e8f9">
+      <animate attributeName="ry" values="8;8;1;8;8" keyTimes="0;0.9;0.94;0.98;1" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="220" cy="132" rx="8" ry="8" fill="#67e8f9">
+      <animate attributeName="ry" values="8;8;1;8;8" keyTimes="0;0.9;0.94;0.98;1" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- smile + cheeks -->
+    <path d="M186 152 Q200 164 214 152" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="165" cy="150" r="5" fill="#f472b6" opacity="0.6"/>
+    <circle cx="235" cy="150" r="5" fill="#f472b6" opacity="0.6"/>
+  </g>
+
+  <!-- typing title -->
+  <g clip-path="url(#typeClip)">
+    <text x="380" y="118" font-family="'Courier New', Consolas, monospace" font-size="34" font-weight="bold" fill="#f8fafc">Hi, I'm Pinandhita</text>
+  </g>
+  <rect y="88" width="3" height="38" fill="#67e8f9">
+    <animate attributeName="x" values="380;780;780;380" keyTimes="0;0.3;0.9;1" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- full name -->
+  <text x="380" y="156" font-family="'Courier New', Consolas, monospace" font-size="16" fill="#94a3b8" opacity="0">
+    Pinandhita Irfa&apos; Abdul Muhanndits
+    <animate attributeName="opacity" values="0;1" dur="1.2s" begin="1s" fill="freeze"/>
+  </text>
+
+  <!-- cycling subtitles -->
+  <g font-family="'Courier New', Consolas, monospace" font-size="21" font-weight="bold" fill="#67e8f9">
+    <text x="380" y="203" opacity="0">Electrical Eng. Student (Power)
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.04;0.22;0.26;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="380" y="203" opacity="0">IoT &amp; Simple Web Projects
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.04;0.22;0.26;1" dur="12s" begin="3s" repeatCount="indefinite"/>
+    </text>
+    <text x="380" y="203" opacity="0">Technology &amp; IoT Enthusiast
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.04;0.22;0.26;1" dur="12s" begin="6s" repeatCount="indefinite"/>
+    </text>
+    <text x="380" y="203" opacity="0">Exploring AI-assisted dev
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.04;0.22;0.26;1" dur="12s" begin="9s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- bobbing chips -->
+  <g font-family="'Courier New', Consolas, monospace" font-size="15" font-weight="bold" text-anchor="middle">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="2s" repeatCount="indefinite"/>
+      <rect x="380" y="235" width="76" height="30" rx="15" fill="#fbbf24"/>
+      <text x="418" y="255" fill="#0f172a">Power</text>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+      <rect x="468" y="235" width="64" height="30" rx="15" fill="#0ea5e9"/>
+      <text x="500" y="255" fill="#0f172a">IoT</text>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+      <rect x="544" y="235" width="64" height="30" rx="15" fill="#a78bfa"/>
+      <text x="576" y="255" fill="#0f172a">Web</text>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="2s" begin="0.9s" repeatCount="indefinite"/>
+      <rect x="620" y="235" width="52" height="30" rx="15" fill="#34d399"/>
+      <text x="646" y="255" fill="#0f172a">AI</text>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+      <rect x="684" y="235" width="120" height="30" rx="15" fill="#f472b6"/>
+      <text x="744" y="255" fill="#0f172a">Engineering</text>
+    </g>
+  </g>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTplZTViZjlkNC0yZTViLTQ2NTktYjlkZi04OTk4MTBmYjNjOTEAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaEe0v+fg8zTUVxjIWa4CC4MAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDowYTkzYTUxYy00Zjg2LTRmZWYtODk0ZC1jM2NkY2RhNDYxZWNscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoJnBtQQCPE4pKz8iwM4uypAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg1Yf+DmzIDpHn5MuJQIgGszNnvWgS5bTEjZvW2yJlUSykZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaIkQGHDvwQYuXzLZ/J9Iu20AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIEpHa+8WX/C7EPM6TEVmjfMK+JRCuxAk77ECDZcvk7w+ZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GSGCZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmVlNWJmOWQ0LTJlNWItNDY1OS1iOWRmLTg5OTgxMGZiM2M5MS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjkzMmRiMDlhLTcwNzktNGM0Zi1iNWQ3LTg2NWRjZDllYTA2ZHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDVh/4ObMgOkefky4lAiAazM2e9aBLltMSNm9bbImVRLKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggEvQtu3ScAwYqk+QAUxz/BTJ/QUfAEV5GjFAnoaof+COiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggcjuqAGJkeJ0pyE6f1cZP49Wqi0DzoDDWrUS/QYzioDh0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQDHfoucpZpfc+sG1nPMZv1hc+I/wpXuPzj657r541MM/lWukcWtRU7EVCrE/SgnoU/GHLcw2NFYTcLGaMWEmeTk=</c2pa:manifest></metadata></svg>

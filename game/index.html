@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Power Runner</title>
+<style>
+  html,body{margin:0;height:100%;background:#0f172a;color:#e2e8f0;font-family:'Courier New',monospace;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+  h2{margin:0;color:#fbbf24}
+  canvas{width:min(96vw,720px);height:auto;border-radius:16px;touch-action:manipulation;box-shadow:0 0 30px #6366f155}
+  p{margin:0;font-size:14px;color:#94a3b8;text-align:center;padding:0 12px}
+</style>
+</head>
+<body>
+<h2>Power Runner</h2>
+<canvas id="g" width="720" height="240"></canvas>
+<p>Space / Arrow Up / tap = jump. Dodge the short circuits and overloaded capacitors!</p>
+<script>
+const c=document.getElementById('g'), x=c.getContext('2d');
+const W=720, H=240, G=190;
+let best=0; try{best=+(localStorage.getItem('pr_best')||0);}catch(e){}
+let y,vy,obs,speed,score,dead,started,spawn,tick,towers;
+const stars=Array.from({length:30},()=>({x:Math.random()*W,y:Math.random()*120,p:Math.random()*6}));
+
+function reset(){
+  y=0; vy=0; obs=[]; speed=5; score=0; dead=false; spawn=60; tick=0;
+  towers=[{x:150},{x:450},{x:750}];
+}
+reset(); started=false;
+
+function jump(){
+  if(dead){ reset(); started=true; return; }
+  started=true;
+  if(y===0) vy=13;
+}
+addEventListener('keydown',e=>{ if(e.code==='Space'||e.code==='ArrowUp'){ e.preventDefault(); jump(); }});
+c.addEventListener('pointerdown',e=>{ e.preventDefault(); jump(); });
+
+function update(dt){
+  if(!started||dead) return;
+  tick+=dt;
+  score+=dt*speed*0.05;
+  speed=5+Math.min(6,score/150);
+  vy-=0.75*dt; y+=vy*dt;
+  if(y<=0){ y=0; vy=0; }
+  towers.forEach(t=>{ t.x-=speed*0.3*dt; if(t.x<-60) t.x+=900; });
+  spawn-=dt;
+  if(spawn<=0){
+    const type=Math.random()<0.5?0:1;
+    obs.push({x:W+20,type,w:type?24:30,h:type?28:32});
+    spawn=42+Math.random()*50;
+  }
+  obs.forEach(o=>{ o.x-=speed*dt; });
+  obs=obs.filter(o=>o.x>-50);
+  for(const o of obs){
+    if(o.x<88 && o.x+o.w>64 && y<o.h-4){
+      dead=true;
+      if(Math.floor(score)>best){
+        best=Math.floor(score);
+        try{localStorage.setItem('pr_best',best);}catch(e){}
+      }
+    }
+  }
+}
+
+function rr(px,py,w,h,r,fill){
+  x.beginPath();
+  x.moveTo(px+r,py); x.arcTo(px+w,py,px+w,py+h,r); x.arcTo(px+w,py+h,px,py+h,r);
+  x.arcTo(px,py+h,px,py,r); x.arcTo(px,py,px+w,py,r); x.closePath();
+  x.fillStyle=fill; x.fill();
+}
+
+function draw(){
+  const g=x.createLinearGradient(0,0,0,H); g.addColorStop(0,'#0f172a'); g.addColorStop(1,'#312e81');
+  x.fillStyle=g; x.fillRect(0,0,W,H);
+  stars.forEach(s=>{ x.globalAlpha=0.4+0.6*Math.abs(Math.sin(tick*0.03+s.p)); x.fillStyle='#e0e7ff'; x.fillRect(s.x,s.y,2,2); });
+  x.globalAlpha=1;
+
+  // towers
+  x.strokeStyle='#475569'; x.lineWidth=3; x.lineCap='round';
+  towers.forEach(t=>{
+    x.beginPath();
+    x.moveTo(t.x,G); x.lineTo(t.x+20,90); x.lineTo(t.x+40,G);
+    x.moveTo(t.x+8,130); x.lineTo(t.x+32,130);
+    x.moveTo(t.x+12,108); x.lineTo(t.x+28,108);
+    x.moveTo(t.x+2,160); x.lineTo(t.x+38,160);
+    x.stroke();
+  });
+
+  // ground
+  x.fillStyle='#1e1b4b'; x.fillRect(0,G,W,H-G);
+  x.strokeStyle='#6366f1'; x.beginPath(); x.moveTo(0,G); x.lineTo(W,G); x.stroke();
+  x.strokeStyle='#4f46e5'; x.setLineDash([18,14]); x.lineDashOffset=(tick*speed)%32;
+  x.beginPath(); x.moveTo(0,G+22); x.lineTo(W,G+22); x.stroke(); x.setLineDash([]);
+
+  // obstacles
+  obs.forEach(o=>{
+    if(o.type===0){
+      x.fillStyle='#ef4444'; x.beginPath(); x.moveTo(o.x,G); x.lineTo(o.x+15,G-32); x.lineTo(o.x+30,G); x.closePath(); x.fill();
+      x.fillStyle='#fff'; x.fillRect(o.x+13.5,G-20,3,10); x.fillRect(o.x+13.5,G-7,3,3);
+    } else {
+      rr(o.x,G-28,24,28,4,'#f59e0b');
+      x.fillStyle='#b45309'; x.fillRect(o.x,G-20,24,5);
+    }
+  });
+
+  // player
+  const px=60, py=G-y-38, run=y===0&&started&&!dead;
+  const sw=run?Math.sin(tick*0.6)*0.45:0;
+  x.fillStyle='#818cf8';
+  [[px+12,-1],[px+28,1]].forEach(([lx,d])=>{
+    x.save(); x.translate(lx,py+36); x.rotate(sw*d); x.fillRect(-3,0,7,14); x.restore();
+  });
+  x.strokeStyle='#94a3b8'; x.beginPath(); x.moveTo(px+20,py); x.lineTo(px+20,py-10); x.stroke();
+  x.fillStyle=Math.floor(tick/12)%2?'#f43f5e':'#fb7185'; x.beginPath(); x.arc(px+20,py-12,4,0,7); x.fill();
+  rr(px,py,40,38,11,dead?'#94a3b8':'#38bdf8');
+  rr(px+6,py+6,28,18,6,'#0f172a');
+  x.fillStyle=dead?'#ef4444':'#67e8f9';
+  if(dead){ x.font='bold 14px monospace'; x.fillText('x  x',px+10,py+19); }
+  else { x.beginPath(); x.arc(px+14,py+15,3.5,0,7); x.arc(px+26,py+15,3.5,0,7); x.fill(); }
+  x.fillStyle='#fde047'; x.beginPath(); x.arc(px+20,py+31,3,0,7); x.fill();
+
+  // HUD
+  x.font='bold 15px "Courier New",monospace'; x.textAlign='right'; x.fillStyle='#f8fafc';
+  x.fillText('SCORE '+String(Math.floor(score)).padStart(4,'0')+'   BEST '+String(best).padStart(4,'0'),W-16,28);
+  x.textAlign='center';
+  if(!started){ x.fillStyle='#fbbf24'; x.font='bold 20px "Courier New",monospace'; x.fillText('Press SPACE or tap to start',W/2,100); }
+  if(dead){ x.fillStyle='#fb7185'; x.font='bold 22px "Courier New",monospace'; x.fillText('SHORT CIRCUIT!',W/2,92);
+    x.fillStyle='#e2e8f0'; x.font='15px "Courier New",monospace'; x.fillText('tap or press SPACE to retry',W/2,118); }
+  x.textAlign='left';
+}
+
+let last=0;
+function loop(t){
+  const dt=Math.min(3,(t-last)/16.67||1); last=t;
+  update(dt); if(!started) tick+=dt*0.3; draw();
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
